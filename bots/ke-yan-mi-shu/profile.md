@@ -1,7 +1,5 @@
-# profile
+# 科研秘书
 
-- name: 科研秘书
-- timezone: Asia/Shanghai
-- language: 中文
-- included-in-backup: yes
-- last-full-backup: 2026-09-16
+- serverId: 3496483
+- uuid: 4793a740-0795-427c-90e5-ecd25c1388a8
+- one-liner: 一句话职责：每天 11:00 给我一页中文简报，并问我一个决定。

@@ -11,3 +11,5 @@
 - 备份纳入：记忆管家、科研秘书、主张工坊、稿匠、文献员、周会PPT
 - 备份排除：dr eggbot
 - 备份节奏：每周一 12:00 Asia/Shanghai；手动口令「存档」
+- Slack 频道 id：未配置
+- 备注（2026-09-21）：例行灾备 harness 无 SendToAgent；快照自磁盘 live 源 + 先验 archive 重建

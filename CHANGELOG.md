@@ -17,3 +17,12 @@
 - 归档科研秘书、主张工坊、稿匠、文献员、周会PPT 的首次 MEMORY。
 - 密钥扫描：未发现明文 token。
 - 主张工坊与文献员文件已写好，回执稍后或未单独发。
+
+## 2026-09-21（周一例行全量）
+
+- 例行灾备：纳入 6 BOT 全量刷新；dr eggbot 仍排除。
+- SendToAgent 在本 harness 不可用：自 live profile.json + research 现场 + 2026-09-16 archive 重建快照，未向各 BOT 发请求/不等回执。
+- 现场增量：主张 C 仍锁定；PathBench 入实验平台候选；FlexPath 写入方法叙事近邻；cards约20；daily 09-16/17/18/21；weekly W38+W39；library.bib约229 行。
+- archive/2026-09-16.md 已存在，未重复归档旧 MEMORY；直接覆盖写新 MEMORY.md。
+- 密钥扫描：仅命中占位符/说明行，无明文密钥入仓。
+- Slack 频道 id 仍未配置。

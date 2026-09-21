@@ -1,10 +1,14 @@
 # 文献员记忆快照
 
-- 备份时间：2026-09-16 19:39 Asia/Shanghai
+- 备份时间：2026-09-21 12:10 Asia/Shanghai
+- 请求方：记忆管家
 - 代理：文献员（原「找文献」，因唤醒故障重建改名）
-- 文件：`/workspace/3502351-memory-backup.md`
+- uuid: 2be3fa28-5969-4ea0-abad-7eb14dd76ac1
+- serverId: 3502351
+- 文件：`/workspace/3502351-memory-backup.md`（覆盖写）
 - 共享目录：`/home/box/research/`
-- 本快照不含明文 token / 密钥 / cookie
+- 重建方式：SendToAgent 不可用；自 prior MEMORY + profile + research 现场重建
+- 本快照不含明文密钥
 
 ---
 
@@ -17,48 +21,46 @@
 - 检索源优先级：arXiv、Semantic Scholar、DBLP；Google Scholar 补充。
 - 领域锚点：neural combinatorial optimization, pointer network routing, obstacle-avoiding rectilinear Steiner, hub generation / neural Steiner, grid/voxel path planning, coarse-to-fine routing。
 - 检索主词禁止（以 CONSTRAINTS.md 为准）：nuclear, 核岛, 核电, 甲方项目名。
-- 论文正文：CONSTRAINTS 已放开核电 / 核岛 / nuclear 等相关表述；甲方项目名与未公开内部规则名仍须谨慎。检索与投稿改写是两回事；文献员只负责检索与卡片。
-- 每次交付最多 5 篇。卡片字段（供科研秘书简报引用）：英文题名+链接、年份、会议/期刊、相关理由、对应主干词、方法与结果摘记、作者自称贡献、文中不足、与 CLAIM 关系、BibTeX。
+- 论文正文：CONSTRAINTS 已放开核电相关表述；检索与投稿改写是两回事；文献员只负责检索与卡片。
+- 每次交付最多 5 篇。卡片字段：英文题名+链接、年份、会议/期刊、相关理由、对应主干词、方法与结果摘记、作者自称贡献、文中不足、与 CLAIM 关系、BibTeX。
 - 落盘：`/home/box/research/cards/YYYYMMDD-短名.md`；追加 `library.bib`；覆盖 `inbox.md`。禁止编造。
 - 节奏：工作日 10:30「日更文献」；周末不跑。可被科研秘书调用。
-- 例行任务：`日更文献` folder `automation-1789553895778`，enabled，`CRON_TZ=Asia/Shanghai 30 10 * * 1-5`，截至本快照从未跑过（今日为手动搜）。
+- 例行任务：`日更文献` folder `automation-1789553895778`，enabled，`CRON_TZ=Asia/Shanghai 30 10 * * 1-5`。
 
 ## 2. 历史决策
 
 - 2026-09-16 创建本代理，替代哑掉的「找文献」。
-- 同日创建 paused 例行「日更文献」`30 10 * * *`；后用户「全部开放定时」→ resume；再改「周末不用汇报」→ `30 10 * * 1-5`。
-- CLAIM 由未锁定改为锁定主张 C（主张工坊通知）：同一套粗到细路由表示，从公开二维栅格迁到去身份合成三维体素后，量化连通率与线长退化，并指出哪一层表示该共享、哪一层必须重学。基线对照：HubRouter / REST / NCO / OARSMT。
-- 检索禁词曾短暂允许 nuclear/核岛/核电，随后 CONSTRAINTS 再次禁止检索主词；同时论文正文放开核电相关表述。以最新 CONSTRAINTS.md 为准。
-- 卡片字段加码：题名链接、相关理由、主干词、方法与结果摘记、作者贡献、文中不足。之后搜写按此字段。
-- 今日（20260916）第一次交付 5 篇（二维+三维均覆盖），科研秘书已出简报（3 篇：HubRouter / OAREST / Wavestar），存 `daily/2026-09-16.md`。
-- 检索失败记录：Semantic Scholar 持续 429；DBLP bot/429；HubRouter/REST/NeuralSteiner 无 arXiv 条目（改用 NeurIPS/DAC 官方 PDF）；独立 NCO 关键词命中偏杂，以 REST/OAREST 覆盖 NCO 风格 Steiner。
-- 用户未回复「现在搜 5 篇吗」的 widget，按跳过处理；实际已因主张工坊/科研秘书调用完成检索。
-- 明确不做：不定主张、不发邮件、不管 Cursor、不改其他 Bot。
+- 同日创建例行「日更文献」→ resume → 改为工作日 only `30 10 * * 1-5`。
+- CLAIM 锁定主张 C；基线对照 HubRouter / REST / NCO / OARSMT。
+- 检索禁词：CONSTRAINTS 禁检索主词 nuclear/核岛/核电；论文正文放开。
+- 卡片字段加码后按新字段搜写。
+- 2026-09-16 首次交付 5 篇（HubRouter/REST/OAREST/MRA*/Wavestar）。
+- 2026-09-17 交付：TransPath / NeuralSteiner / NeuroSteiner / NN-Steiner / MazeNet（简报置顶 TransPath）。
+- 2026-09-18 交付：PathBench / Neural-A* / OARSMT-flow / GAT-Steiner / Attention-NCO（PathBench 入平台候选）。
+- 2026-09-21 交付：FlexPath / UPath / AMRA* / OctoPath / DRL-global-routing（FlexPath 写入主张方法叙事近邻）。
+- 检索失败常态：Semantic Scholar 常 429；DBLP 偶发 bot/429；保密主词未用于检索。
 
 ## 3. 现场快照
 
 ### 主张 C（CLAIM.md）
-同一套粗到细路由表示，从公开二维栅格迁到去身份合成三维体素后，连通率与线长退化可被量化，并指出哪一层表示该共享、哪一层必须重学。实验场：公开二维栅格 + 去身份合成三维体素，两条并行、先用配对实例测迁移落差。
+同一套粗到细路由表示，从公开二维栅格迁到去身份合成三维体素后，连通率与线长退化可被量化，并指出哪一层表示该共享、哪一层必须重学。实验平台候选 PathBench；方法叙事近邻 FlexPath。
 
-注意：CLAIM.md「保密」段仍写「对外禁止 nuclear、核岛、核电…」，与已更新的 CONSTRAINTS.md（检索禁、正文放开）不一致，见待确认。
+### 最新 inbox（20260921）5 篇
+1. FlexPath — arXiv 2026 — 支持 — 二维；连通先验可共享/偏好须适配 — `cards/20260921-flexpath.md` — kim2026flexpath
+2. UPath — arXiv 2026 — 支持 — 公开二维学习启发式；拓扑异分布 — `cards/20260921-upath.md` — ananikian2026upath
+3. AMRA* — ICRA 2022 — 可作基线 — 多分辨率 anytime — `cards/20260921-amra-star.md` — saxena2022amra
+4. OctoPath — Sensors 2021 — 支持 — 三维 OcTree/体素层次 — `cards/20260921-octopath.md` — trasnea2021octopath
+5. DRL-global-routing — J. Mech. Des. 2020 — 可作基线 — NCO/DRL 全局布线 — `cards/20260921-drl-global-routing.md` — liao2020drlgr
 
-### 今日 inbox（20260916）5 篇
-1. HubRouter — NeurIPS 2023 — 可作基线 — 二维 VLSI — `cards/20260916-hubrouter.md` — key `du2023hubrouter`
-2. REST — DAC 2021 — 可作基线 — 二维 RSMT / NCO 风格 — `cards/20260916-rest.md` — key `liu2021rest`
-3. OAREST / Train on Pins and Test on Obstacles — NeurIPS 2025 — 可作基线+支持 — OARSMT — `cards/20260916-oarest.md` — key `du2025oarest`
-4. Multi-Resolution A* — SoCS 2020 — 支持 — 公开 2D+3D 多分辨率栅格 — `cards/20260916-mra-star.md` — key `du2020mra`
-5. Hierarchical Any-Angle 3D Grids / Wavestar — RSS 2025 — 支持 — 3D 体素 coarse-to-fine — `cards/20260916-wavestar-hier3d.md` — key `reijgwart2025wavestar`
-
-BibTeX 已在 `library.bib`（5 keys 如上）。今日卡片写于字段加码之前，可能尚未含「主干词 / 作者贡献 / 文中不足」全套，下次日更应按新字段补或重写。
+### 库存
+- cards/：约 20 张（09-16..21）
+- library.bib：约 229 行
+- daily 简报已引用多日 inbox；显式「二维→三维」同一表示迁移量化文献仍稀薄
 
 ### 协作
-- 科研秘书：已收到 inbox 并出简报。
-- 主张工坊：已通知 5 篇落盘。
-- dr eggbot：约束/定时/周末规则均已执行。
-- 记忆管家：本文件即其发起的灾备快照。
-
-### 用户偏好
-- 中文回复；不让用户搜词、管 bib、翻译。
+- 科研秘书：持续消费 inbox 出简报
+- 主张工坊：W39 已吸收 FlexPath 措辞
+- 记忆管家：本文件即灾备快照（无 SendToAgent 回执）
 
 ## 4. 密钥占位
 
@@ -67,8 +69,7 @@ BibTeX 已在 `library.bib`（5 keys 如上）。今日卡片写于字段加码�
 - Semantic Scholar API key：`<SEMANTIC_SCHOLAR_API_KEY>`（当前未配置；曾遇 429）
 - DBLP：公开 API，无密钥；曾遇 bot/429
 - arXiv：公开 API，无密钥
-- Google Scholar：无 connector / 无 cookie 备份；禁止写入浏览器 cookie
-- GitHub / Origin token：`<GITHUB_TOKEN>` / `<ORIGIN_TOKEN>`（文献员不使用）
-- 邮箱 / Slack / 其他 connector：`<CONNECTOR_TOKEN>`（未用）
+- Google Scholar：无 connector；禁止写入浏览器 session
+- GitHub / Origin：`<GITHUB_CREDENTIAL>` / `<ORIGIN_CREDENTIAL>`（文献员不使用）
+- 邮箱 / Slack / 其他 connector：`<CONNECTOR_CREDENTIAL>`（未用）
 - 甲方项目名：不写入本快照，不当检索主词
-
